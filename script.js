@@ -5,6 +5,12 @@ const taskList = document.getElementById('taskList');
 addButton.addEventListener('click', addTask);
 taskList.addEventListener('click', removeTask);
 
+taskInput.addEventListener('keyup', function(event) {
+  if (event.key === 'Enter') {
+    addTask();
+  }
+});
+
 function addTask() {
   const taskText = taskInput.value.trim();
   if (taskText !== '') {
